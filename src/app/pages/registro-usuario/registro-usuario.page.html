@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Alta de usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <h2>Bienvenido al Sistema Gestor de Ganado Lechero</h2>
+
+  
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input type="text" [(ngModel)]="usuario.nombre"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Apellido Paterno</ion-label>
+    <ion-input type="text" [(ngModel)]="usuario.paterno"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Apellido Materno</ion-label>
+    <ion-input type="text" [(ngModel)]="usuario.materno"></ion-input>
+  </ion-item>  
+
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input type="email" [(ngModel)]="usuario.email"></ion-input>
+  </ion-item>
+ <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input [type]="verPassword ? 'text' : 'password'" [(ngModel)]="usuario.password"></ion-input>
+    <ion-button fill="clear" slot="end" (click)="verPassword = !verPassword">
+      <ion-icon slot="icon-only" [name]="verPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+    </ion-button>
+  </ion-item>
+   <ion-item>
+    <ion-label position="floating">Confirmar Contraseña</ion-label>
+    <ion-input [type]="verPasswordConfirm ? 'text' : 'password'" [(ngModel)]="usuario.passwordConfirm"></ion-input>
+    <ion-button fill="clear" slot="end" (click)="verPasswordConfirm = !verPasswordConfirm">
+      <ion-icon slot="icon-only" [name]="verPasswordConfirm ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floting">Rol</ion-label>
+    <ion-select [(ngModel)]="usuario.rol">
+      <ion-select-option value="admin">Administrador</ion-select-option>
+      <ion-select-option value="vet">Veterinario</ion-select-option>
+      <ion-select-option value="gan">Ganadero</ion-select-option>
+      <ion-select-option value="enc">Encargado</ion-select-option>
+    </ion-select>
+  </ion-item>
+    <ion-button shape ="round" color="secondary" (click)="nuevoUsuario()">
+    Crear Usuario
+  </ion-button> 
+  <ion-button shape ="round" color="danger"(click)="irARegresar()">
+      Cancelar
+    </ion-button>
+    
+
+
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Panel de Administración</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  <div class="header-section ion-text-center">
+    <h2>Sistema de Gestión de Ganado Lechero</h2>
+    <p>Gestión de usuarios y sistema</p>
+  </div>
+
+  <ion-card class="admin-card" (click)="irARegistro()" >
+    <ion-item lines="none">
+      <ion-icon name="person-add-outline" slot="start" color="success"></ion-icon>
+      <ion-label>
+         <h3>Agregar Nuevo Usuario</h3>
+        
+      </ion-label>
+      
+    </ion-item>
+  </ion-card>
+
+  <ion-card class="admin-card" (click)="irAUsuarios()">
+    <ion-item lines="none" button>
+      <ion-icon name="people-outline" slot="start" color="primary"></ion-icon>
+      <ion-label>
+        <h3>Ver Usuarios</h3>
+        <p>Detalle de usuarios</p>
+      </ion-label>  
+    </ion-item>
+  </ion-card>
+
+</ion-content>
